@@ -16,9 +16,10 @@
 # inherit from the proprietary version
 -include vendor/asus/msm8916-common/BoardConfigVendor.mk
 
-VENDOR_PATH := device/asus/msm8916-common
+#VENDOR_PATH := device/asus/msm8916-common
+PLATFORM_PATH := device/asus/msm8916-common
 
-TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -39,7 +40,7 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_PLATFORM := msm8916
 
 # Properties
-TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
@@ -67,7 +68,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
@@ -129,7 +130,7 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
 # Healthd
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -137,7 +138,7 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
@@ -149,7 +150,7 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Lineage hardware
-JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(VENDOR_PATH)/lineagehw|**/*.java
+JAVA_SOURCE_OVERLAYS := org.lineageos.hardware|$(PLATFORM_PATH)/lineagehw|**/*.java
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(VENDOR_PATH)/overlay
@@ -175,13 +176,13 @@ TARGET_USES_INTERACTION_BOOST := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Release tools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_asus
-TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)/releasetools
 
 # Render
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -189,7 +190,7 @@ USE_OPENGL_RENDERER := true
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # SDCLANG
 TARGET_USE_SDCLANG := false

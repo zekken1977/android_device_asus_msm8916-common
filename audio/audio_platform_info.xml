@@ -187,15 +187,17 @@
         <device name="SND_DEVICE_OUT_VOICE_LINE" interface="PRI_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" interface="PRI_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" interface="PRI_MI2S_RX"/>
-	<!-- <device name="SND_DEVICE_OUT_HANDSET" interface="PRI_MI2S_RX"/> -->
+	<!-- <device name="SND_DEVICE_OUT_HANDSET" interface="PRI_MI2S_RX_Voice"/> -->
         <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_REVERSE" backend="speaker" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_VBAT" backend="speaker" interface="QUAT_MI2S_RX"/>
-	<!-- <device name="SND_DEVICE_OUT_VOICE_HANDSET" interface="PRI_MI2S_RX"/> -->
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" interface="QUAT_MI2S_RX"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_VBAT" backend="speaker" interface="QUAT_MI2S_RX"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2" backend="speaker" interface="QUAT_MI2S_RX"/>
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2_VBAT" backend="speaker" interface="QUAT_MI2S_RX"/>
+	<device name="SND_DEVICE_OUT_VOICE_HANDSET" interface="PRI_MI2S_RX_Voice"/>
+	<device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="voice-speaker" interface="QUAT_MI2S_RX_Voice"/>
+<!--
+	<device name="SND_DEVICE_OUT_VOICE_SPEAKER_VBAT" backend="voice-speaker" interface="QUAT_MI2S_RX_Voice"/>
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER_2" backend="voice-speaker" interface="QUAT_MI2S_RX_Voice"/>
+	<device name="SND_DEVICE_OUT_VOICE_SPEAKER_2_VBAT" backend="voice-speaker" interface="QUAT_MI2S_RX_Voice"/>
+-->
         <device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" interface="PRI_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_ANC_FB_HEADSET" interface="PRI_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_ANC_FB_HEADSET" interface="PRI_MI2S_RX"/>
@@ -233,16 +235,16 @@
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_CAMCORDER_MIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_DMIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_SPEAKER_QMIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" interface="TERT_MI2S_TX"/>
+        <device name="SND_DEVICE_IN_VOICE_DMIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_QMIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" interface="TERT_MI2S_TX_Voice"/>
+        <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" interface="TERT_MI2S_TX_Voice"/>
         <device name="SND_DEVICE_IN_AANC_HANDSET_MIC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_QUAD_MIC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" interface="TERT_MI2S_TX"/>
@@ -250,12 +252,12 @@
         <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK" interface="SENARY_MI2S_TX"/>
         <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK_MONO_1" interface="SENARY_MI2S_TX"/>
         <device name="SND_DEVICE_IN_CAPTURE_VI_FEEDBACK_MONO_2" interface="SENARY_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC_BROADSIDE" interface="TERT_MI2S_TX"/>
+        <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC_BROADSIDE" interface="TERT_MI2S_TX_Voice"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_BROADSIDE" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_BROADSIDE" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS_BROADSIDE" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS_BROADSIDE" interface="TERT_MI2S_TX"/>
-        <device name="SND_DEVICE_IN_VOICE_FLUENCE_DMIC_AANC" interface="TERT_MI2S_TX"/>
+        <device name="SND_DEVICE_IN_VOICE_FLUENCE_DMIC_AANC" interface="TERT_MI2S_TX_Voice"/>
         <device name="SND_DEVICE_IN_HANDSET_QMIC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_SPEAKER_QMIC_AEC" interface="TERT_MI2S_TX"/>
         <device name="SND_DEVICE_IN_SPEAKER_QMIC_NS" interface="TERT_MI2S_TX"/>
